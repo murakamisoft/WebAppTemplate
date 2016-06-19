@@ -7,7 +7,7 @@ import play.mvc.Result;
 
 /**
  * データ作成
- * 
+ *
  * @author murakami
  *
  */
@@ -15,7 +15,7 @@ public class CreateDataControl extends Controller {
 
 	/**
 	 * データ作成
-	 * 
+	 *
 	 * @return
 	 */
 	public static Result createData() {

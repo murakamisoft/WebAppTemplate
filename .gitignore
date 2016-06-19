@@ -1,6 +1,7 @@
 logs
 project/project
 project/target
+project/.sbtserver
 target
 tmp
 .history
@@ -16,3 +17,7 @@ dist
 bin
 .DS_Store
 activator-sbt-*-shim.sbt
+.sbtserver
+sbtserver
+/.sbtserver
+/*.log
