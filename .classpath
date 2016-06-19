@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="app-2.11"/>
 	<classpathentry kind="src" path="app"/>
 	<classpathentry kind="src" path="conf"/>
-	<classpathentry kind="src" path="test-2.11"/>
 	<classpathentry excluding="resources/" kind="src" path="test"/>
 	<classpathentry kind="src" path="test/resources"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
@@ -125,5 +123,6 @@
 	<classpathentry kind="lib" path="/Users/murakami/workspace/activator/computer-database-java/target/scala-2.11/classes_managed"/>
 	<classpathentry kind="lib" path="/Users/murakami/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.4.jar"/>
 	<classpathentry kind="lib" path="/Users/murakami/workspace/lib/mysql-connector-java-5.1.38-bin.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-9.4.1208.jre6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
