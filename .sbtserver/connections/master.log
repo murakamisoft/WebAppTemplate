@@ -1,0 +1,40 @@
+New log file opened at Thu Jun 16 00:02:24 JST 2016 by 710@murakami-no-MacBook-Air.local
+Taking next connection to: 49449
+New client attempting to connect on port: 49450-49449
+  Address = /192.168.3.3:49449
+This client on port 49450 has uuid 2c698b5e-2c5c-44ae-8462-443fb83f49fd configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-2c698b5e-2c5c-44ae-8462-443fb83f49fd
+Taking next connection to: 49449
+New client attempting to connect on port: 49452-49449
+  Address = /192.168.3.3:49449
+Handshake exception on socket: 49452
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 49449
+New client attempting to connect on port: 49453-49449
+  Address = /192.168.3.3:49449
+This client on port 49453 has uuid 571c6075-6f39-46c1-beeb-e56f6324e45c configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-2c698b5e-2c5c-44ae-8462-443fb83f49fd, play-fork-run-571c6075-6f39-46c1-beeb-e56f6324e45c
+Taking next connection to: 49449
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 49449
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 49449
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 49449
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 49449
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 49449

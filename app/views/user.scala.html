@@ -1,0 +1,154 @@
+@(userList: List[models.MUser])
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
+
+
+<title>ユーザー管理</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">ユーザ管理</a>
+			</div>
+			<!--/.navbar-collapse -->
+		</div>
+	</nav>
+
+	<div class="container" style="margin-top: 75px;">
+
+		<div class="row">
+			<div class="col-md-3">
+				<form action="/userToroku" method="POST">
+					<input type="submit" value="自動ユーザ登録" class="btn btn-success" />
+				</form>
+			</div>
+			<div class="col-md-3">
+				<form action="/createData" method="POST">
+					<input type="submit" value="マスタデータ再作成" class="btn btn-danger" />
+				</form>
+			</div>
+
+			<div class="col-md-3">
+				<form action="/userAllDelete" method="POST">
+					<input type="submit" value="全ユーザクリア" class="btn btn-danger" />
+				</form>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2>ユーザー検索</h2>
+		<form action="/userSearch" method="POST">
+			ユーザーID： <input type="text" name="userId" /> <input type="submit"
+				value="検索" class="btn btn-success" />
+		</form>
+
+		<form action="/userControl" method="POST" id="controlForm"
+			style="margin-top: 20px;">
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th width="100px;">ユーザーID</th>
+						<th>ユーザー名</th>
+						<th>性別</th>
+						<th>メールアドレス</th>
+						<th>電話番号</th>
+						<th>住所</th>
+						<th>所有車</th>
+						<th width="50px;"></th>
+						<th width="50px;"></th><th width="50px;"></th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+					@for((user) <- userList){
+					<tr>
+						<td style="align: center;">@user.userId</td>
+						<td>@user.name</td>
+						<td>@user.getSexMei()</td>
+						<td>@user.mailAddress</td>
+						<td>@user.tel</td>
+						<td>@user.address</td>
+						<td>@user.getCarName()</td>
+						<td>@user.getKanrishaMei()</td>
+						<td><input type="button" value="訓練" id="btnKunren"
+							name="@user.userId" class="btn btn-primary btn-xs" /></td>
+						<td><input type="button" value="削除" id="btnDelete"
+							name="@user.userId" class="btn btn-danger btn-xs" /></td>
+					</tr>
+					}
+				</tbody>
+			</table>
+			<input type="hidden" id="deleteUserId" name="deleteUserId" value="">
+			<input type="hidden" id="kunrenUserId" name="kunrenUserId" value="">
+		</form>
+		<hr>
+
+		<footer>
+			<p>&copy; 2016 murakami</p>
+		</footer>
+	</div>
+	<!-- /container -->
+
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+	$(function() {
+
+		init();
+
+		$('#tbody input[type=button]').click(function() {
+			try {
+				if ($(this).attr("id") == "btnDelete") {
+					var deleteUserId = $(this).attr("name");
+
+					$("#deleteUserId").val(deleteUserId);
+				}
+				if ($(this).attr("id") == "btnKunren") {
+					var kunrenUserId = $(this).attr("name");
+
+					$("#kunrenUserId").val(kunrenUserId);
+				}
+
+				$("#controlForm").submit();
+
+			} catch (e) {
+				alert(e);
+			}
+
+		});
+
+	});
+
+	function init() {
+		$("#deleteUserId").val("");
+		$("#kunrenUserId").val("");
+	}
+</script>
