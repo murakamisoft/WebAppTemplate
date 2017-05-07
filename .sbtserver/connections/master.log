@@ -1,31 +1,34 @@
-New log file opened at Sun Jun 19 12:00:24 JST 2016 by 6096@LAPTOP-NP66HTLG
-Taking next connection to: 60146
-New client attempting to connect on port: 60147-60146
-  Address = /192.168.3.4:60146
-This client on port 60147 has uuid 8ff426ed-76aa-46c0-8d58-946cf8373da1 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-8ff426ed-76aa-46c0-8d58-946cf8373da1
-Taking next connection to: 60146
+New log file opened at Sun May 07 11:48:54 JST 2017 by 10136@LAPTOP-NP66HTLG
+Taking next connection to: 54756
+New client attempting to connect on port: 54757-54756
+  Address = /192.168.179.5:54756
+This client on port 54757 has uuid d62fe3b0-6609-48ee-b3a5-c2ec617f5ad8 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-d62fe3b0-6609-48ee-b3a5-c2ec617f5ad8
+Taking next connection to: 54756
+New client attempting to connect on port: 54758-54756
+  Address = /192.168.179.5:54756
+Handshake exception on socket: 54758
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.fill(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 54756
+New client attempting to connect on port: 54759-54756
+  Address = /192.168.179.5:54756
+This client on port 54759 has uuid 1f06d40d-76f5-4414-9a58-eb1adb230086 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-d62fe3b0-6609-48ee-b3a5-c2ec617f5ad8, play-fork-run-1f06d40d-76f5-4414-9a58-eb1adb230086
+Taking next connection to: 54756
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60146
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60146
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60146
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60146
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60146
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 60146
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 6096@LAPTOP-NP66HTLG logs at Sun Jun 19 12:21:25 JST 2016, goodbye.
+Taking next connection to: 54756
